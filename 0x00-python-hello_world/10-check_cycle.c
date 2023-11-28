@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- *checks_cycle - check if linked is cyclic
+ *checks_cycle - check if linked has a cycle
  *@list: the linked list
- *Return: 0 on False and 1 if true
+ *Return: 0 if false and 1 if true
  */
 
 int check_cycle(listint_t *list)
