@@ -4,7 +4,7 @@
  * @list: the linked list
  * Return: 0 on False and 1 if true
  */
-int check_cycle(listint_t *list)
+int check_cycle (listint_t *list)
 {
 	listint_t *current = list;
 
