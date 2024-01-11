@@ -88,3 +88,8 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """rep of dictionary rep of a rectangle"""
+        rec_dict = {"id":self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+        return rec_dict
