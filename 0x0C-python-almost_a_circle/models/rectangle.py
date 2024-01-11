@@ -68,8 +68,10 @@ class Rectangle(Base):
 
     def display(self):
         """prints to stdout the rectangle instance with '#' """
+        for _ in range(self.__y):
+            print()
         for _ in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """returns the print() and str() rep of a rectangle"""
