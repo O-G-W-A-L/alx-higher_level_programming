@@ -22,3 +22,31 @@ class Square(Rectangle):
         """sets the value of the size"""
         self.width = value
         self.height = value
+
+    def updated(self, *args, **kwargs):
+        """assign args to attr based on posiiton"""
+        if args:
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                if count == 1:
+                    self.size = arg
+                if count == 2:
+                    self.x = arg
+                if count == 3:
+                    self.y = arg
+                else:
+                    break
+        elif len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.width = value
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+                else:
+                    break
