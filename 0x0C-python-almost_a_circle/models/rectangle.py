@@ -77,10 +77,14 @@ class Rectangle(Base):
         """returns the print() and str() rep of a rectangle"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assign arg to attr based on position"""
         if args:
             attrs = ["id", "width", "height", "x", "y"]
 
             for i, arg in enumerate(args):
                     setattr(self, attrs[i], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
