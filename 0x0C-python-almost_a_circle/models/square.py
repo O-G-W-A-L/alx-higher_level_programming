@@ -50,3 +50,8 @@ class Square(Rectangle):
                     self.y = value
                 else:
                     break
+
+    def to_dictionary(self):
+        """Returns dict rep of the square"""
+        square_dict = {"id":self.id, "size":self.width, "x":self.x, "y":self.y}
+        return square_dict
