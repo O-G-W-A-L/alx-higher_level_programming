@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import sys
-import os
 import json
 import csv
+import turtle
 
 
 """Defines a base model class"""
@@ -114,3 +114,39 @@ class Base:
                 return list_of_instances
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws all rectangles and squares using the turtle model"""
+        turt = turtle.Turtle()
+        turt.screen.bgcolor(#ccc2c8)
+        turt.pensize(4)
+        turt.shape("turtle")
+
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3cd")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()
