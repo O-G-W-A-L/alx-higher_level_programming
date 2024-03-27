@@ -18,3 +18,4 @@ def find_peak(list_of_integers):
             hi = mid
 
     return list_of_integers[lo]
+
